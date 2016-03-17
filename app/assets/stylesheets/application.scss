@@ -11,10 +11,16 @@
  * file per style scope.
  *
  */
+@mixin border-shadow($h, $v, $blur, $spread, $r, $g, $b, $opacity) {
+    -webkit-box-shadow: $h, $v, $blur, $spread, rgba($r, $g, $b, $opacity);
+    -moz-box-shadow: $h, $v, $blur, $spread, rgba($r, $g, $b, $opacity);
+    box-shadow: $h, $v, $blur, $spread, rgba($r, $g, $b, $opacity);
+}
 
 .main-body {
    margin-top: 150px;
 }
+
 .digg_pagination {
   background: white;
   cursor: default; }
