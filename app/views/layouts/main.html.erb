@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myblog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+   <%= render 'mainNavbar' %>
+   <div class="container main-body">
+      <div class='row'>
+         <div class="col-md-9">
+            <%= yield %>
+         </div>
+         <div class="col-md-3">
+            <%= yield :sidebar %>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

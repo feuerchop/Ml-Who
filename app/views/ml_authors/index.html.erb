@@ -1,0 +1,38 @@
+<!-- <h1>List of Machine Learning Researchers</h1> -->
+<!-- <%= link_to "All useres", users_path %> | <%= link_to "All articles", articles_path %> -->
+
+<table id="ml_author_table" class="table table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Affiliation</th>
+    <!-- <th>Country</th>
+    <th>Email</th> -->
+    <th>#Appeared</th>
+  </tr>
+
+  <% @authors.each do |author| %>
+    <tr>
+      <td><%= link_to author.name, ml_author_path(author) %></td>
+      <td><%= author.affiliation %></td>
+      <!-- <td><%= author.country %></td>
+      <td><%= author.email %></td> -->
+      <td><%= author.n_appeared %></td>
+    </tr>
+  <% end %>
+</table>
+<div class="digg_pagination">
+   <%= will_paginate @authors %>
+</div>
+
+<% content_for :sidebar do %>
+   <ul class="list-group">
+      <p>
+         All users
+      </p>
+      <% @users.each do |user| %>
+         <li class="list-group-item">
+            <%= image_tag user.pic_path, size: "20x20"  %>
+            <%= link_to user.name, user_path(user) %></li>
+      <% end %>
+   </ul>
+<% end %>

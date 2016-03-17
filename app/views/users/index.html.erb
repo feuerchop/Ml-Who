@@ -1,0 +1,27 @@
+<h1> All Users </h1>
+<%= link_to "Register", new_user_path, class: "btn btn-primary" %><br>
+
+<!-- HTML Code -->
+<table class='table'>
+   <thead>
+      <tr>
+         <th>Picture</th> <th>Name</th> <th>Gender</th> <th>Age</th>
+         <th>Email</th> <th>Address</th> <th>Phone</th>
+      </tr>
+   </thead>
+   <tbody>
+      <% @users.each do |user| %>
+         <tr>
+            <td><%= image_tag user.pic_path, size: "100x100" %></td>
+            <td><%= link_to user.name, user_path(user) %></td>
+            <td><%= user.gender %></td>
+            <td><%= user.age %></td>
+            <td><%= user.email %></td>
+            <td><%= user.address %></td>
+            <td><%= user.phone %></td>
+         </tr>
+      <% end %>
+   </tbody>
+</table>
+
+<!-- <%= render partial: "user", collection: @users %> -->
