@@ -16,6 +16,21 @@ class MlAuthorsController < ApplicationController
 
    def edit
      #TODO: edit author details
+     @ml_author = MlAuthor.find(params[:id])
    end
+
+   def update
+      @ml_author = MlAuthor.find(params[:id])
+      if @ml_author.update(ml_author_params)
+         redirect_to @ml_author
+      else
+         render 'edit'
+      end
+   end
+
+   private
+      def ml_author_params
+         params.require(:ml_author).permit(:affiliation, :country, :email)
+      end
 
 end
