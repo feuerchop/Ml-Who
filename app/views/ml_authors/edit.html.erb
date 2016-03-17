@@ -1,8 +1,9 @@
 <h3> <%= @ml_author.name %> </h3>
 <%= form_for @ml_author do |f| %>
+<!-- TODO: beautify the form -->
    Affiliation <%= f.text_area :affiliation %><br>
    Country <%= f.country_select :country %><br>
-   Email <%= f.text_field :email %>
+   Email <%= f.text_field :email %><br>
    <%= submit_tag "save" %>
 <% end %>
 <%= link_to "back", :back %>

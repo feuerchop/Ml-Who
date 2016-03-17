@@ -8,7 +8,7 @@
       <%= @ml_author.affiliation %>
    </p>
    <p>
-      <%= @ml_author.country %>
+      <%= ISO3166::Country[@ml_author.country].name %>
    </p>
    <p>
       <%= @ml_author.email %>
