@@ -3,20 +3,20 @@
 
 <table id="ml_author_table" class="table table-hover">
   <tr>
-    <th>Name</th>
-    <th>Affiliation</th>
+    <th class='col-md-3'><%= fa_icon "user", text: 'Name' %></th>
+    <th class='col-md-7'><%= fa_icon "university", text: 'Affiliation' %>Affiliation</th>
     <!-- <th>Country</th>
     <th>Email</th> -->
-    <th>#Appeared</th>
+    <th class='col-md-2' style="text-align: center;"><%= fa_icon "trophy", text: 'Appeared' %></th>
   </tr>
 
   <% @authors.each do |author| %>
     <tr>
-      <td><%= link_to author.name, ml_author_path(author) %></td>
-      <td><%= author.affiliation %></td>
+      <td class='col-md-3'><%= link_to author.name, ml_author_path(author) %></td>
+      <td class='col-md-7'><%= author.affiliation %></td>
       <!-- <td><%= author.country %></td>
       <td><%= author.email %></td> -->
-      <td><%= author.n_appeared %></td>
+      <td class='col-md-2' style="text-align: center;"><%= author.n_appeared %></td>
     </tr>
   <% end %>
 </table>
