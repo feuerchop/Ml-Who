@@ -31,10 +31,12 @@ class MlAuthorsController < ApplicationController
    def pull
       # TODO: fetch profile from scholar.google.com
       @ml_author = MlAuthor.find(params[:id])
-      ml_author_gsprofile = gs_pull(@ml_author.name)
-      ml_author_gsprofile.inspect
+      # ml_author_gsprofile = gs_pull(@ml_author.name)
+      # @ml_author.affiliation = ml_author_gsprofile
+      # @ml_author.save
       # after retrieving all info of the author, refresh the show view
-      render 'show'
+      @users = User.all
+      render 'show', object: [@ml_author, @users]
    end
 
    private
@@ -44,7 +46,6 @@ class MlAuthorsController < ApplicationController
 
       def gs_pull(author_name)
          # TODO: retrieve gs profile
-         
       end
 
 end
