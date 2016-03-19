@@ -28,14 +28,23 @@ class MlAuthorsController < ApplicationController
       end
    end
 
-   def fetch
+   def pull
       # TODO: fetch profile from scholar.google.com
-
+      @ml_author = MlAuthor.find(params[:id])
+      ml_author_gsprofile = gs_pull(@ml_author.name)
+      ml_author_gsprofile.inspect
+      # after retrieving all info of the author, refresh the show view
+      render 'show'
    end
 
    private
       def ml_author_params
          params.require(:ml_author).permit(:affiliation, :country, :email)
+      end
+
+      def gs_pull(author_name)
+         # TODO: retrieve gs profile
+         
       end
 
 end

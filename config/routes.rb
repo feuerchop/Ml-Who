@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-   get 'ml_authors/index'
+   # get 'ml_authors/index'
    # get 'ml_authors/:id/fetch' => 'ml_author/:id#fetch:id'
    resources :articles do
       resources :comments
    end
    resources :users
-   resources :ml_authors
+
+   resources :ml_authors do
+      member do
+         get 'pull'
+      end
+   end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
