@@ -28,6 +28,11 @@ class MlAuthorsController < ApplicationController
       end
    end
 
+   def fetch
+      # TODO: fetch profile from scholar.google.com
+
+   end
+
    private
       def ml_author_params
          params.require(:ml_author).permit(:affiliation, :country, :email)

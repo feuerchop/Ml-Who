@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
    get 'ml_authors/index'
-
+   # get 'ml_authors/:id/fetch' => 'ml_author/:id#fetch:id'
    resources :articles do
       resources :comments
    end
