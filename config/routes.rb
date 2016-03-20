@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       end
    end
 
+   # TODO: sorting authors
+   # get 'ml_authors/sort/:by/:order', to: 'ml_authors#sort'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

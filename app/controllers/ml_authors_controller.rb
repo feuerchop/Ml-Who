@@ -39,6 +39,14 @@ class MlAuthorsController < ApplicationController
       render 'show', object: [@ml_author, @users]
    end
 
+   # def sort
+   #    @authors = MlAuthor.search(params['user_input']) \
+   #                                  .paginate(:page => params[:page], :per_page => 12) \
+   #                                  .order(params[:by]+' '+params[:order])
+   #    @users = User.all
+   #    redirect_to 'index'
+   # end
+
    private
       def ml_author_params
          params.require(:ml_author).permit(:affiliation, :country, :email)
