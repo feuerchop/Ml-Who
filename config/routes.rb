@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
    # get 'ml_authors/index'
    # get 'ml_authors/:id/fetch' => 'ml_author/:id#fetch:id'
+   root 'ml_authors#index'
+   
    resources :articles do
       resources :comments
    end
@@ -19,7 +21,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'ml_authors#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
